@@ -1,0 +1,17 @@
+name: doc-staging
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - 'mkdocs.yml'
+      - 'docs/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      SANDSTORM_DOC_URL: ${{ secrets.doc_url_staging }}
+    steps:
+    - uses: actions/checkout@v2
+    - run: bash -x docs/generate.sh -s -p
