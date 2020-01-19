@@ -1,0 +1,14 @@
+name: doc-prod
+
+on:
+  push:
+    branches: [doc-prod]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      SANDSTORM_DOC_URL: ${{ secrets.doc_url_prod }}
+    steps:
+    - uses: actions/checkout@v2
+    - run: bash -x docs/generate.sh -s -p

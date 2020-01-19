@@ -1,0 +1,14 @@
+name: doc-staging
+
+on:
+  push:
+    branches: [doc-staging]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      SANDSTORM_DOC_URL: ${{ secrets.doc_url_staging }}
+    steps:
+    - uses: actions/checkout@v2
+    - run: bash -x docs/generate.sh -s -p
