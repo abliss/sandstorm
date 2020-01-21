@@ -1,6 +1,6 @@
 # Administering Sandstorm
 
-## Running Sandstorm on your own server
+## Running Sandstorm on your own server TESTING
 
 These documents help you get your own Sandstorm server set up the way you want it.
 
